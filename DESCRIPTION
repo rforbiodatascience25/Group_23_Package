@@ -22,7 +22,7 @@ Authors@R:
            role = "aut",
            email = "c.benkler@web.de"
            ),
-    person(given = "Franscec",
+    person(given = "Francesc",
            family = "Calabuig Carré",
            role = "aut",
            email = "s253698@dtu.dk"
