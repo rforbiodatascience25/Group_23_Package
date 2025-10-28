@@ -1,6 +1,6 @@
 ---
 title: "replica"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{replica}
   %\VignetteEngine{knitr::rmarkdown}
@@ -44,13 +44,17 @@ translation(codons)
 
 Lastly, the fifth function aims to plot the frequency of each amino acid into a sequence of amino acids. To do so, it takes the sequence of amino acids as an input. For instance: 
 ```{r}
+options(bitmapType = "cairo")
+
 aa_chain <- "AWLPPHWLLQRI"
-aa_frequency_plot(aa_chain)
+plot <- aa_frequency_plot(aa_chain)  # create ggplot
+print(plot)  # actually draw it to the PNG device
 ```
 
 These five function can thus be used to replicate the whole process of DNA transcription/translation and find the frequency of each resulting amino acid in the resulting sequence as so:
 ```{r}
 library(Replica)
+options(bitmapType = "cairo")
 
 # Creating the DNA sequence
 sequence_lenght <- 12
@@ -66,8 +70,14 @@ codons <- make_codons(rna, start = 1)
 aa_chain <- translation(codons)
 
 # Ploting the frequency of each amino acid in this resulting sequence
-aa_frequency_plot(aa_chain)
+aa_plot <- aa_frequency_plot(aa_chain)
+aa_plot
 ```
 
 These functions can be used to create dummy cases and generate random amino acids chains, but it can also be used on actual data (starting from DNA, RNA, or even a list of codon) to do the following steps.
+An improvement of the package could be to add a reverse strand DNA function or a transcription function.
+
+[**GitHub Repository:**]{.underline}
+
+https://github.com/rforbiodatascience25/Group_23_Package
 
