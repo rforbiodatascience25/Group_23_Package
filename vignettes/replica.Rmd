@@ -1,0 +1,73 @@
+---
+title: "replica"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{replica}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Replica)
+```
+
+This package is all about replicating the central dogma of molecular biology. It is composed of 5 functions.
+
+The first function creates a DNA sequence from a string of nucleotides. To do so, it takes as input an integer to indicate the number of nucleotides used, which is going to be the final lenght of the DNA sequence. For instance:
+```{r}
+sequence_lenght <- 12
+build_dna(sequence_lenght)
+```
+
+The second function is about transcription: it takes a DNA sequence as input and turns it into a RNA sequence by converting all the Thymine into Uracil. For instance:
+```{r}
+transcription('ACACGTAGTTA')
+```
+
+The third function aims to convert a RNA sequence into codons. Thus, it takes as inputs the RNA sequence to convert and the first position from where it'll start making the codons. For instance:
+```{r}
+make_codons("AUGCGAUGC", start = 1)
+```
+
+The fourth function translates the RNA codons into the corresponding amino acids chain. Hence, the input is the codons sequence to translate. For instance:
+```{r}
+codons <- c("AUG", "CCU","CAA", "CGA", "UGG", "GGC")
+translation(codons)
+```
+
+Lastly, the fifth function aims to plot the frequency of each amino acid into a sequence of amino acids. To do so, it takes the sequence of amino acids as an input. For instance: 
+```{r}
+aa_chain <- "AWLPPHWLLQRI"
+aa_frequency_plot(aa_chain)
+```
+
+These five function can thus be used to replicate the whole process of DNA transcription/translation and find the frequency of each resulting amino acid in the resulting sequence as so:
+```{r}
+library(Replica)
+
+# Creating the DNA sequence
+sequence_lenght <- 12
+dna <- build_dna(sequence_lenght)
+
+# Turning it into a RNA sequence
+rna <- transcription(dna)
+
+# Making the codons out of it
+codons <- make_codons(rna, start = 1)
+
+# Translating the codons into amino acids chain
+aa_chain <- translation(codons)
+
+# Ploting the frequency of each amino acid in this resulting sequence
+aa_frequency_plot(aa_chain)
+```
+
+These functions can be used to create dummy cases and generate random amino acids chains, but it can also be used on actual data (starting from DNA, RNA, or even a list of codon) to do the following steps.
+
