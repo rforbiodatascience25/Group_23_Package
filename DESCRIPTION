@@ -1,0 +1,31 @@
+Package: Replica
+Type: Package
+Title: Replica
+Version: 0.1.0
+Authors@R:
+  c(person(given = "Louis",
+           family = "Page",
+           role = c("aut",cre")), 
+    person(given = "Maxence",
+           family = "Marbouty",
+           role = "aut",
+           ),
+    person(given = "Romane",
+           family = "Ehlinger",
+           role = "aut",
+           ),
+    person(given = "Cora",
+           family = "Benkler",
+           role = "aut",
+           ),
+    person(given = "Fransceco",
+           family = "?",
+           role = "aut",
+           )
+           
+Description: collaborative coding project using GitHub and collaborate on creating a 
+simple R package that replicates the central dogma of molecular biology.
+
+License: usethis::use_mit_license("Group23")
+Encoding: UTF-8
+LazyData: true
