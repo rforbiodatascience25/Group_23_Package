@@ -34,16 +34,13 @@ LazyData: true
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
-<<<<<<< HEAD
 Imports: 
     ggplot2,
     stringr
 Suggests: 
     knitr,
-    rmarkdown
-VignetteBuilder: knitr
-=======
-Suggests: 
+    rmarkdown,
     testthat (>= 3.0.0)
+VignetteBuilder: knitr
 Config/testthat/edition: 3
->>>>>>> 5001c0921690231ad81fa4486c884bf5ac8f5e1d
+
