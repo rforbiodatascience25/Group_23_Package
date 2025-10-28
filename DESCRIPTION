@@ -5,22 +5,27 @@ Version: 0.1.0
 Authors@R:
   c(person(given = "Louis",
            family = "Page",
-           role = c("aut","cre")), 
+           role = c("aut","cre"),
+           email = "s253729@dtu.dk"), 
     person(given = "Maxence",
            family = "Marbouty",
            role = "aut",
+           email = "s253730@dtu.dk"
            ),
     person(given = "Romane",
            family = "Ehlinger",
            role = "aut",
+           email = "romane.l1g@gmail.com"
            ),
     person(given = "Cora",
            family = "Benkler",
            role = "aut",
+           email = "c.benkler@web.de"
            ),
-    person(given = "Fransceco",
-           family = "?",
+    person(given = "Franscec",
+           family = "Calabuig Carré",
            role = "aut",
+           email = "s253698@dtu.dk"
            ))
 Description: collaborative coding project using GitHub and collaborate on creating a simple R package that replicates the central dogma of molecular biology.
 License: MIT + file LICENSE
