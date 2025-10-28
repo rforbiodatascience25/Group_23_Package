@@ -22,7 +22,7 @@ Authors@R:
            role = "aut",
            email = "c.benkler@web.de"
            ),
-    person(given = "Franscec",
+    person(given = "Francesc",
            family = "Calabuig Carré",
            role = "aut",
            email = "s253698@dtu.dk"
@@ -34,3 +34,6 @@ LazyData: true
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
